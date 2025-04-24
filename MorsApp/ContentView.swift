@@ -34,6 +34,12 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            // App Title
+            Text("Mor's Weather")
+                .font(.largeTitle)
+                .bold()
+                .padding(.top, 20)
+            
             // City Picker
             Picker("Select City", selection: $selectedCity) {
                 ForEach(cities) { city in
@@ -53,7 +59,7 @@ struct ContentView: View {
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 180, height: 180)
+                .frame(width: 220, height: 220)
             
             // Temperature
             Text("\(Int(selectedCity?.temperature ?? cities[0].temperature))°")
